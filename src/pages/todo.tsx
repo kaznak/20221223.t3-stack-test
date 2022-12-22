@@ -20,8 +20,8 @@ export function Todo() {
 
   const toggleCompleted = (id: string) => {
     const temp = [...tasks];
-    const i = temp.findIndex((t) => t.id === id);
-    temp[i].completed = !temp[i].completed;
+    const obj = temp.find((t) => t.id === id);
+    if (obj) obj.completed = !obj.completed;
     setTasks(temp);
   };
 
